@@ -10,11 +10,12 @@ if(empty($_POST['field-name']) || empty($_POST['field-email']) || empty($_POST['
 }
 $name = $_POST['field-name'];
 $email = $_POST['field-email'];
-$birth_year = $_POST['year'];
-$pol = $_POST['radio-pol'];
-$limbs = intval($_POST['radio-limb']);
-$superpowers = $_POST['field-super'];
+$year = $_POST['field-birth'];
+$floor = $_POST['radio-group-1'];
+$limbs = intval($_POST['radio-group-2']);
+$superpowers = $_POST['field-listbox'];
 $bio= $_POST['field-bio'];
+$check = $_POST['check-1'];
 
 $bioreg = "/^\s*\w+[\w\s\.,-]*$/";
 $reg = "/^\w+[\w\s-]*$/";
@@ -55,10 +56,11 @@ try {
   $stmt = $db->prepare("INSERT INTO application SET name=:name, email=:email, year=:byear, pol=:pol, konech=:limbs, biogr=:bio");
   $stmt->bindParam(':name', $name);
   $stmt->bindParam(':email', $email);
-  $stmt->bindParam(':byear', $birth_year);
-  $stmt->bindParam(':pol', $pol);
+  $stmt->bindParam(':byear', $year);
+  $stmt->bindParam(':pol', $floor);
   $stmt->bindParam(':limbs', $limbs);
   $stmt->bindParam(':bio', $bio);
+  $stmt->bindParam(':check', $check);
   if($stmt->execute()==false){
   print_r($stmt->errorCode());
   print_r($stmt->errorInfo());
