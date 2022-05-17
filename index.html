@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Моя страница</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+   <div id="form">
+    <h1>Форма контракта</h1>
+
+    <form action="/"
+      method="POST">
+
+      <label>
+        Имя:<br />
+        <input type="text" name="field-name"
+          value="Иван" />
+      </label><br />
+
+      <label>
+        Еmail:<br />
+        <input name="field-email"
+          value="example@example.com"
+          type="email" />
+      </label><br />
+
+      <label>
+        Дата рождения:<br />
+        <input name="field-birth"
+          value="2000-01-01"
+          type="date" />
+      </label><br />
+	  
+	  Пол:<br />
+      <label><input type="radio" checked="checked"
+        name="radio-group-1" value="Мужской" />
+        Мужской</label>
+      <label><input type="radio"
+        name="radio-group-1" value="Женский" />
+        Женский</label>
+	  <label><input type="radio"
+        name="radio-group-1" value="Отсутствует" />
+        Отсутствует</label><br />
+		
+	  Количество конечностей:<br />
+      <label><input type="radio"
+        name="radio-group-2" value="0" />
+        0</label>
+      <label><input type="radio"
+        name="radio-group-2" value="1" />
+        1</label>
+	  <label><input type="radio"
+        name="radio-group-2" value="2" />
+        2</label>
+	  <label><input type="radio"
+        name="radio-group-2" value="3" />
+        3</label>
+	  <label><input type="radio" checked="checked"
+        name="radio-group-2" value="4" />
+        4</label><br />
+		
+	  <label>
+        Сверхспособности:
+        <br />
+        <select name="field-listbox"
+          multiple="multiple">
+          <option value="Бессмертие">Бессмертие</option>
+          <option value="Noclip">Полет</option>
+          <option value="Суперсила" selected="selected">Суперсила</option>
+	  <option value="Телепатия">Телепорт</option>
+        </select>
+      </label><br />
+	  
+      <label>
+        Биография:<br />
+        <textarea name="field-bio">Напишите о себе</textarea>
+      </label><br />
+
+      Чекбокс:<br />
+      <label><input type="checkbox" checked="checked"
+        name="check-1" />
+        Я принимаю условия</label><br />
+
+      Если уверенны в своем ответе нажимайте:
+      <input type="submit" value="Отправить" />
+    </form>
+  
+    <script type="text/javascript">
+      window.onload = function () {
+          var ddlYears = document.getElementById("ddlYears");
+          var currentYear = (new Date()).getFullYear();
+          for (var i = 1950; i <= currentYear; i++) {
+              var option = document.createElement("OPTION");
+              option.innerHTML = i;
+              option.value = i;
+              ddlYears.appendChild(option);
+          }
+      };
+  </script> 
+  
+  </body>
+
+</html>
