@@ -62,15 +62,16 @@ try {
   $stmt->bindParam(':limbs', $limbs);
   $stmt->bindParam(':bio', $bio);
   $stmt->bindParam(':check', $check);
+  $one = 1;
   foreach($superpowers as $unserting){
 	if ($unserting =='immortal')
-	$stmt->bindParam(':g', 1);
+	$stmt->bindParam(':g', $one);
 	  if ($unserting =='noclip')
-	$stmt->bindParam(':f', 1);
+	$stmt->bindParam(':f', $one);
 	  if ($unserting =='power')
-	$stmt->bindParam(':s', 1);
+	$stmt->bindParam(':s', $one);
 	  if ($unserting ='telepat')
-	$stmt->bindParam(':t', 1);
+	$stmt->bindParam(':t', $one);
   }
 	if($stmt->execute()==false){
   print_r($stmt->errorCode());
