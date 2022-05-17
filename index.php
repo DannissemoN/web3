@@ -61,7 +61,6 @@ try {
   $stmt->bindParam(':pol', $floor);
   $stmt->bindParam(':limbs', $limbs);
   $stmt->bindParam(':bio', $bio);
-  $stmt->bindParam(':check', $check);
   $one = 1;
 	$zero = 0;
   foreach($superpowers as $unserting){
