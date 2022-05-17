@@ -54,7 +54,7 @@ $user = 'u47606';
 $pass = '8549349';
 $db = new PDO('mysql:host=localhost;dbname=u47606', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 try {
-  $stmt = $db->prepare("INSERT INTO application SET name=:name, email=:email, year=:byear, pol=:pol, konech=:limbs, biogr=:bio");
+  $stmt = $db->prepare("INSERT INTO application SET name=:name, email=:email, year=:byear, floor=:pol, konech=:limbs, bio=:bio, ability_god=:g, ability_fly=:f, ability_super:=s, ability_tp:=t ");
   $stmt->bindParam(':name', $name);
   $stmt->bindParam(':email', $email);
   $stmt->bindParam(':byear', $year);
@@ -62,22 +62,22 @@ try {
   $stmt->bindParam(':limbs', $limbs);
   $stmt->bindParam(':bio', $bio);
   $stmt->bindParam(':check', $check);
-  if($stmt->execute()==false){
+  foreach($superpowers as $inserting){
+	if ($unserting =='immortal')
+	$stmt->bindParam(':g', 1);
+	  if ($unserting =='noclip')
+	$stmt->bindParam(':f', 1);
+	  if ($unserting =='power')
+	$stmt->bindParam(':s', 1);
+	  if ($unserting ='telepat')
+	$stmt->bindParam(':t', 1);
+  }
+	if($stmt->execute()==false){
   print_r($stmt->errorCode());
   print_r($stmt->errorInfo());
   exit();
   }
-  $id = $db->lastInsertId();
-  $sppe= $db->prepare("INSERT INTO superp SET name=:name, per_id=:person");
-  $sppe->bindParam(':person', $id);
-  foreach($superpowers as $inserting){
-	$sppe->bindParam(':name', $inserting);
-	if($sppe->execute()==false){
-	  print_r($sppe->errorCode());
-	  print_r($sppe->errorInfo());
-	  exit();
-	}
-  }
+  
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
