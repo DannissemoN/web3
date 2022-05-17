@@ -42,6 +42,7 @@ if($pol !== 'Мужской' && $pol !== 'Женский'){
 	print_r('Неверный формат пола');
 	exit();
 }
+print_r ($superpowers);
 foreach($superpowers as $checking){
 	if(array_search($checking,$list_sup)=== false){
 			print_r('Неверный формат суперсил');
