@@ -11,7 +11,7 @@ if(empty($_POST['field-name']) || empty($_POST['field-email']) || empty($_POST['
 $name = $_POST['field-name'];
 $email = $_POST['field-email'];
 $year = $_POST['field-birth'];
-$floor = $_POST['radio-group-1'];
+$pol = $_POST['radio-group-1'];
 $limbs = intval($_POST['radio-group-2']);
 $superpowers = $_POST['field-listbox'];
 $bio= $_POST['field-bio'];
