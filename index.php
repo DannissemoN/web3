@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST'){
 	print_r('Не POST методы не принимаются');
 }
 $errors = FALSE;
-if(empty($_POST['field-name']) || empty($_POST['field-email']) || empty($_POST['field-birth']) || empty($_POST['check-1'])  || !isset($_POST['field-listbox']) ){
+if(empty($_POST['field-name']) || empty($_POST['field-email']) || empty($_POST['field-birth']) || empty($_POST['check-1'])  || !isset($_POST['porew']) ){
 	print_r('Заполните пустые поля!');
 	exit();
 }
@@ -13,7 +13,7 @@ $email = $_POST['field-email'];
 $year = $_POST['field-birth'];
 $pol = $_POST['radio-group-1'];
 $limbs = intval($_POST['radio-group-2']);
-$superpowers = $_POST['field-listbox'];
+$superpowers = $_POST['porew'];
 $bio= $_POST['field-bio'];
 $check = $_POST['check-1'];
 
