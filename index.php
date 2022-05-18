@@ -54,7 +54,7 @@ $user = 'u47606';
 $pass = '8549349';
 $db = new PDO('mysql:host=localhost;dbname=u47606', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 try {
-  $stmt = $db->prepare("INSERT INTO application SET name=:name, email=:email, year=:byear, floor=:pol, konech=:limbs, bio=:bio, ability_god=:g, ability_fly=:f, ability_super=:s, ability_tp=:t ");
+  $stmt = $db->prepare("INSERT INTO application SET name=:name, email=:email, year=:byear, pol=:floor, konech=:limbs, bio=:bio, ability_god=:g, ability_fly=:f, ability_super=:s, ability_tp=:t ");
   $stmt->bindParam(':name', $name);
   $stmt->bindParam(':email', $email);
   $stmt->bindParam(':byear', $year);
