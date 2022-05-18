@@ -58,7 +58,7 @@ try {
   $stmt->bindParam(':name', $name);
   $stmt->bindParam(':email', $email);
   $stmt->bindParam(':byear', $year);
-  $stmt->bindParam(':pol', $floor);
+  $stmt->bindParam(':floor', $pol);
   $stmt->bindParam(':limbs', $limbs);
   $stmt->bindParam(':bio', $bio);
   $one = 1;
